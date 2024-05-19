@@ -1,19 +1,20 @@
-<nb-card status="success">
-  <nb-card-header>Nebula</nb-card-header>
-  <nb-card-body>
-    A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-    Originally, nebula was a name for any diffuse astronomical object,
-    including galaxies beyond the Milky Way.
-  </nb-card-body>
-  <nb-card-footer>By Wikipedia</nb-card-footer>
-</nb-card>
+<nb-layout>
+  <nb-layout-header fixed>Company Name</nb-layout-header>
 
-<nb-card status="danger">
-  <nb-card-header>Nebula</nb-card-header>
-  <nb-card-body>
-    A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-    Originally, nebula was a name for any diffuse astronomical object,
-    including galaxies beyond the Milky Way.
-  </nb-card-body>
-  <nb-card-footer>By Wikipedia</nb-card-footer>
-</nb-card>
+  <nb-sidebar>Sidebar Content</nb-sidebar>
+  
+  <nb-layout-column>
+    Page Content <button nbButton>Hello World</button>
+  </nb-layout-column>
+
+  <nb-layout-footer>
+
+
+    
+      <input nbInput fullWidth status="primary" placeholder="Say something" [formControl]="msgText">
+      <button nbButton (click)="sendMsg()">
+        <nb-icon icon="paper-plane-outline"></nb-icon>
+      </button>
+
+  </nb-layout-footer>
+</nb-layout>

@@ -1,24 +1,18 @@
 import { Component } from '@angular/core';
-import { NbCardModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  template: `
-
-    <nb-layout>
-      <nb-layout-header fixed>Company Name</nb-layout-header>
-
-      <nb-sidebar>Sidebar Content</nb-sidebar>
-      
-      <nb-layout-column>
-        Page Content <button nbButton>Hello World</button>
-      </nb-layout-column>
-    </nb-layout>
-  `,
-  imports: [NbLayoutModule, NbSidebarModule, NbCardModule, NbLayoutModule],
+  templateUrl: './chat.component.html',
+  imports: [ReactiveFormsModule, NbLayoutModule, NbSidebarModule, NbCardModule, NbLayoutModule, NbInputModule, NbFormFieldModule, NbIconModule, NbButtonModule],
   styleUrl: './chat.component.css'
 })
 export class ChatComponent {
+  msgText = new FormControl('');
 
+  sendMsg() {
+    console.log(this.msgText.value);
+  }
 }
