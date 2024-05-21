@@ -5,6 +5,8 @@ import { NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputM
 import { ChatService } from '../chat.service';
 import { CommonModule } from '@angular/common';
 
+import { Message } from '../messages';
+
 @Component({
   selector: 'app-chat',
   standalone: true,
@@ -20,8 +22,12 @@ export class ChatComponent {
     private chatService: ChatService
   ) {}
 
-  sendMsg() {
-    console.log(this.msgText.value);
-    //console.log(this.msgHistory);
+  sendMessage() {
+    const msg: Message = {
+      sender: 'You',
+      text: this.msgText.value || ''
+    };
+    this.chatService.sendMessage(msg);
+    console.log(this.chatService.getMessageHistory());
   }
 }

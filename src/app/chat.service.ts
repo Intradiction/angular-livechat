@@ -12,4 +12,9 @@ export class ChatService {
   getMessageHistory() {
     return this.messageHistory;
   }
+  
+  // Currently just appends the message to the messageHistory
+  sendMessage(message: Message) {
+    messageHistory.push(message);
+  }
 }
