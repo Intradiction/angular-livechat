@@ -1,14 +1,23 @@
 <nb-layout>
-  <nb-layout-header fixed>Angular Chat App</nb-layout-header>
+  <nb-layout-header fixed>
+    <h2>Angular Chat App</h2>
+  </nb-layout-header>
 
-  <nb-sidebar>Sidebar Content</nb-sidebar>
+  <nb-sidebar>
+    <h4>List of Channels:</h4>
+    <div *ngFor="let channel of channels">
+      <button nbButton status="info" (click)="switchChannel(channel)">
+        {{ channel.name }}
+      </button>
+    </div>
+    
+  </nb-sidebar>
   
   <nb-layout-column>
-    Page Content <button nbButton>Hello World</button>
-    <app-message *ngFor="let message of messageHistory" [message]="message"/>
+    <app-channel [channel]="currentChannel"/>
   </nb-layout-column>
 
-  <nb-layout-footer>
+  <nb-layout-footer fixed>
 
       <input nbInput fullWidth status="primary" placeholder="Say something" [formControl]="msgText">
       <button nbButton (click)="sendMessage()">

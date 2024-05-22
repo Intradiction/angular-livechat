@@ -1,2 +1,7 @@
-/* @import '~@nebular/theme/styles/globals.css';
-@import '~@nebular/theme/styles/themes/default.css'; */
+/* nb-layout-footer {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+} */
