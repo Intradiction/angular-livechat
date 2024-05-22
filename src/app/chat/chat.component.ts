@@ -21,7 +21,6 @@ export class ChatComponent {
   channels: Channel[] = this.chatService.getAllChannels();
   currentChannel = this.chatService.getCurrentChannel();
 
-  messageHistory = this.chatService.getMessageHistory();
   msgText = new FormControl('');
 
   constructor(

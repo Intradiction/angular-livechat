@@ -15,7 +15,7 @@ export class ChatService {
   getMessageHistory(channel?: Channel): Message[] {
 
     if (typeof channel === "undefined") {
-      return this.messageHistory;
+      return [];
     } else {
       console.log(channel)
       return channel!.messageHistory;
